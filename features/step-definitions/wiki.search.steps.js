@@ -6,6 +6,7 @@ const assert = require('assert');
 
 Given(/^I open web browser for wikipedia;$/, async () => {
     WikiHome.open()
+    console.log('I open navigate to the home page');
 });
 
 When(/^I type "([^"]*)" on the search box$/, async (name) => {
@@ -19,19 +20,22 @@ When(/^I click on search button$/, async () => {
 });
 
 Then(/^the URL should be "([^"]*)";$/, async (url) => {
-    await expect(browser).toHaveUrl(url)
+    await expect(browser).toHaveUrl(url, `Expected URL to be "${url}"`);
     await browser.pause(1000)
 });
 
 Then(/^I want to see an image under title "([^"]*)" on the right column$/, async (title) => {
-    await expect(ArticlePage.articleImg).toBeDisplayed()
+    try {
+        await expect(ArticlePage.articleImg).toBeDisplayed();
 
-    const titleElement = await $(`//div[contains(text(), '${title}')]`);
+        const titleElement = await $(`//div[contains(text(), '${title}')]`);
+        await expect(titleElement).toBeDisplayed();
 
-
-    await expect(titleElement).toBeDisplayed();
-
-
+        console.log(`Found title: "${title}" and displayed image.`);
+    } catch (error) {
+        console.error('Error:', error);
+        throw error; 
+    }
 });
 
 
@@ -43,7 +47,7 @@ Then(/^I want to read information about "([^"]*)", "([^"]*)", "([^"]*)" on the r
 
 
 
-Then(/^I want to  a section about "([^"]*)"$/, async (sectionName) => {
+Then(/^I want to read a section about "([^"]*)"$/, async (sectionName) => {
 
     //span[contains(@class, 'mw-headline') and text()="Early years"]/following::*[self::h2 or self::p]
         try {

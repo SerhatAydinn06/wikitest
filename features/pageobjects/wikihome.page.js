@@ -17,7 +17,6 @@ class WikiHome {
     }
 
     open() {
-
         return browser.url('https://www.wikipedia.org/')
     }
 
