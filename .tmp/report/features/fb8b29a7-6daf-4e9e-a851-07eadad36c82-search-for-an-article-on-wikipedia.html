@@ -794,7 +794,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                 Passed
                             </p>
                         </td>
-                        <td class="percentage">100.00 %</td>
+                        <td class="percentage">0.00 %</td>
                     </tr>
                     <tr>
                         <td>
@@ -803,7 +803,7 @@ input#darkCheck:checked ~ label>svg#moon {
                                 Failed
                             </p>
                         </td>
-                        <td class="percentage">0.00 %</td>
+                        <td class="percentage">100.00 %</td>
                     
                     
                     </tr>
@@ -880,7 +880,7 @@ input#darkCheck:checked ~ label>svg#moon {
                     <i class="fa fa-chrome fa-lg">
                         <span>chrome</span>
                     </i>
-                    118.0.5993.117
+                    127.0.6533.120
                     
                 </span>
             </li>
@@ -946,12 +946,20 @@ input#darkCheck:checked ~ label>svg#moon {
                     
 
                     
-
+                        <li>
+                            <span class="step skipped-background" data-toggle="tooltip" title="Scenario is skipped">1</span>
+                        </li>
                     
 
                     
                         <li>
-                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">9</span>
+                            <span class="step failed-background" data-toggle="tooltip" title="Scenario failed">1</span>
+                        </li>
+                    
+
+                    
+                        <li>
+                            <span class="step passed-background" data-toggle="tooltip" title="Scenario passed">7</span>
                         </li>
                     
 
@@ -1328,8 +1336,8 @@ input#darkCheck:checked ~ label>svg#moon {
 
                                 
                                     
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        <div class="label" data-toggle="tooltip" data-placement="top" title="Step failed">
+                                            <i class="fa fa-exclamation-circle fa-2x failed-color"></i>
                                         </div>
                                     
                                 
@@ -1350,6 +1358,8 @@ input#darkCheck:checked ~ label>svg#moon {
                                     
 
                                     
+                                        <a href="#error0-6-error" data-toggle="collapse">+ Show Error</a>
+                                    
 
                                     
                                     
@@ -1364,6 +1374,15 @@ input#darkCheck:checked ~ label>svg#moon {
                             </div>
 
                         
+                            
+                                <div id="error0-6-error" class="scenario-step-collapse collapse">
+                                    <pre class=info>Error: Can't call getText on element with selector "//th[contains(text(),'Education')]/../td" because element wasn't found
+    at implicitWait (file:///Users/serhataydin/wikitest/node_modules/webdriverio/build/utils/implicitWait.js:29:19)
+    at Element.elementErrorHandlerCallbackFn (file:///Users/serhataydin/wikitest/node_modules/webdriverio/build/middlewares.js:14:29)
+    at Element.wrapCommandFn (file:///Users/serhataydin/wikitest/node_modules/@wdio/utils/build/shim.js:81:29)
+    at ArticlePage.getHeaderText (/Users/serhataydin/wikitest/features/pageobjects/article.page.js:32:18)
+    at World.(anonymous) (/Users/serhataydin/wikitest/features/step-definitions/wiki.search.steps.js:45:5)</pre>
+                                </div>
                             
 
                             
@@ -1388,8 +1407,8 @@ input#darkCheck:checked ~ label>svg#moon {
 
                                 
                                     
-                                        <div class="label" title="Success">
-                                            <i class="fa fa-check-circle fa-2x passed-color" data-toggle="tooltip" data-placement="top" title="Step passed"></i>
+                                        <div class="label" data-toggle="tooltip" data-placement="top" title="Step is skipped">
+                                            <i class="fa fa-arrow-circle-right fa-2x skipped-color"></i>
                                         </div>
                                     
                                 
@@ -1556,8 +1575,8 @@ input#darkCheck:checked ~ label>svg#moon {
                     ],
                     datasets: [{
                         data: [
-                            1,
                             0,
+                            1,
                             0,
                             0,
                             0,
