@@ -1,28 +1,15 @@
  # wikitest
-
-This repository contains an automated testing project for Wikipedia, using WebdriverIO with the Cucumber framework. The tests are designed to verify various functionalities of the Wikipedia website, such as searching for articles, verifying URLs, and checking for specific content on article pages.
-
-Table of Contents
-Installation
-Project Structure
-Usage
-Contributing
-License
-Installation
+ Installation
 To set up and run this project on your local machine, follow these steps:
 
 Clone the Repository:
-
-bash
-Copy code
 git clone https://github.com/SerhatAydinn06/wikitest.git
 cd wikitest
+
 Install Dependencies:
 Ensure that you have Node.js installed. Then, install the necessary packages by running:
-
-bash
-Copy code
 npm install
+
 Configure WebdriverIO:
 WebdriverIO should be configured based on your environment and requirements. A basic configuration file (wdio.conf.js) is already included in the repository.
 
@@ -34,9 +21,8 @@ wdio.conf.js: WebdriverIO configuration file.
 Usage
 To execute the tests, run the following command:
 
-bash
-Copy code
 npx wdio run wdio.conf.js
+
 This command will start the WebdriverIO test runner, execute the test scenarios defined in the Cucumber feature files, and generate a test report.
 
 Example Test Scenario
